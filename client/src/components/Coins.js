@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Coin extends Component {
+class Coins extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
     }
   }
   render() {
     return (
       <div>
-
+        sup;
+        {this.props}
       </div>
     );
   }
 }
 
-Coin.propTypes = {
+Coins.propTypes = {
 
 };
 
-export default Coin;
+export default Coins;

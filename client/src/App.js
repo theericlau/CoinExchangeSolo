@@ -5,9 +5,12 @@ import axios from 'axios';
 import Coins from './components/Coins';
 
 class App extends Component {
-  state = {
-    coinList: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      coinList: [],
+    }
+  }
 
   componentDidMount() {
     this.callApi()
@@ -18,7 +21,6 @@ class App extends Component {
   callApi = async () => {
     const response = await fetch('/api');
     const body = await response.json();
-    console.log(body);
 
     if (response.status !== 200) throw Error(body.message);
 
@@ -31,7 +33,10 @@ class App extends Component {
     .then((response) => {
       console.log('im the response', response.data);
     })
+
+    console.log(this.state.coinList);
   }
+
 
   render() {
     return (
